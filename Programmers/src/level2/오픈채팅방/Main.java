@@ -55,7 +55,6 @@ class Solution {
         	int idx = result.get(i).indexOf("님");
         	String id = result.get(i).substring(0,idx);
         	answer[i] = id_nick.get(id) + result.get(i).substring(idx);
-        	
         }
         
         return answer;
