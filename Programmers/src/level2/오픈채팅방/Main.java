@@ -1,9 +1,6 @@
 package level2.오픈채팅방;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
 
@@ -19,8 +16,6 @@ public class Main {
 
 class Solution {
     public String[] solution(String[] record) {
-    	
-    	
     	//1. Log를 남길 List 선언 
         List<String> result = new ArrayList<String>();
         
