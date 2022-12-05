@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6adc243b-cb54-4e76-af7a-98d593ca87a6" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programmers/Programmers.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/H_index/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/JadenClass/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/grep/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/거리두기확인하기/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/거리두기확인하기/Solution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/문자열압축/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/문자열압축/Solution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/오픈채팅방/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/오픈채팅방/Solution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/src/level2/H_index/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmers/src/level2/H_index/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/src/level2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmers/src/level2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/src/level2/grep/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmers/src/level2/grep/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers/src/level2/오픈채팅방/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmers/src/level2/오픈채팅방/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmers/bin/level2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Programmers/bin/level2/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +59,7 @@
       <workItem from="1668589536781" duration="122000" />
       <workItem from="1668589665923" duration="43000" />
       <workItem from="1668589714331" duration="22000" />
+      <workItem from="1668667722224" duration="2000" />
     </task>
     <servers />
   </component>
