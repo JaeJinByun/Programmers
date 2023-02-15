@@ -11,9 +11,8 @@ public class Main {
 class Solution {
     public int[] solution(int N, int[] stages) {
         int[] answer = new int[N];
-        Map<Integer,Integer> map = new HashMap<>();
+        ArrayList<Double[]> arr = new ArrayList<>();
 
-        Arrays.sort(stages);
 
         int cnt = 0;
         int total = 0;
@@ -24,24 +23,17 @@ class Solution {
                     if(j > i) cnt++;
                 }
             }
-            double d = cnt/total;
+            arr.add(new Double[]{(double)i,(double)cnt/total});
 
-            map.put(i,(int)d*100);
             cnt=0;
             total=0;
         }
 
-        List<Map.Entry<Integer, Integer>> list = new ArrayList<>(map.entrySet());
-        list.sort(new Comparator<Map.Entry<Integer, Integer>>() {
-            @Override
-            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
-                return o2.getValue() - o1.getValue();
-            }
-        });
+        arr.sort((o1, o2) -> Double.compare(o1[1], o2[1]));
 
         cnt = 0;
-        for(Map.Entry<Integer,Integer> entry : list) {
-            answer[cnt] = entry.getKey();
+        for(Double[] d : arr) {
+            answer[cnt] = d[0].intValue();
             cnt++;
         }
 
