@@ -1,4 +1,10 @@
 Programmers/bin/
+Programmers/.ideaj
+Programmers/.settings
+Programmers/.DS_Store
+Programmers/.project
+Programmers/*.iml
+.DS_Store
 
 # Created by https://www.toptal.com/developers/gitignore/api/intellij
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij
@@ -8,6 +14,7 @@ Programmers/bin/
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
+.idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
