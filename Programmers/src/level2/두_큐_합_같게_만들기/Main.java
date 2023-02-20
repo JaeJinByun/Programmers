@@ -1,4 +1,4 @@
-기package level2.두_큐_합_같게_만들기;
+package level2.두_큐_합_같게_만들기;
 
 import java.util.*;
 
