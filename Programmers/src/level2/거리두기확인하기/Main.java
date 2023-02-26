@@ -1,5 +1,7 @@
 package level2.거리두기확인하기;
 
+import java.util.*;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -19,85 +21,65 @@ public class Main {
 
 }
 
-
 class Solution {
-	//상하좌우 좌표 
-	int x1[] = {0,  1,  0,  -1};
-	int y1[] = {-1, 0,  1,   0}; 
-	
-	//대각선 좌표 
-	int x2[] = {1, 1, -1, -1};
-	int y2[] = {-1, 1, 1, -1};
-	
-    public int[] solution(String[][] places) {
-        int[] answer = new int[places.length];
-        String place[];
-        
-    	for(int i=0; i<5; i++) {
-    		place = places[i];
-    		answer[i] = bfs(place);        	
-        }
-        return answer;
-    }
-    
-    //범위 검사
-    public boolean range(int x, int y) {
-    	
-    	if(x > 4 || y > 4 || x < 0 || y < 0 ) {
-    		return false;
-    	}
-    	
-    	return true;
-    }
-    
-    //탐색
-    public int bfs(String[] place) {
-    	
-    	for(int i=0; i<5; i++) { //y 축 
-    		for(int j=0; j<5; j++) { //x 축 
-    			if(place[i].charAt(j) == 'P') {
-    				
-    				for(int k=0; k<4; k++) {
-    					int x = x1[k] + j;
-    					int y = y1[k] + i;
-    					
-    					//범위 검사 
-    					if(range(x,y)) {
-    						//상하좌우 탐색 
-    						if(place[y].charAt(x) == 'P') return 0;
-    						
-    						//한칸 이동후 상하좌우 다시 탐색 
-    						int dx = x + x1[k];
-    						int dy = y + y1[k];
-    						
-    						// 상하좌우가 'O' 이면서 대각선이 P 이면 0리턴 
-    						if(range(dx, dy) && place[y].charAt(x) =='O' && place[dy].charAt(dx) == 'P' ) {
-    							return 0;
-    						}
-    					}
-    					
-    					//대각선 탐색 
-    					x = j + x2[k];
-    					y = i + y2[k];
-    					// 범위안에 있고 대각선에 P 가 존재 || 상하좌우에 O 로 뚫려있을때 0리턴 = 맨해튼 지키지 못한경우 
-    					if( (range(x,y) && place[y].charAt(x) == 'P') && (place[y].charAt(j) =='O' || place[i].charAt(x) == 'O')){
-    						return 0;
-    					}
-    					
-    				}
-    				
-    			}
-    		}
-    	}
-    	//전부 통과시 1리턴 
-    	return 1; 
-    }
-    
+	public int[] solution(String[][] places) {
+		int[] answer = new int[places.length];
+
+		for(int i=0; i<5; i++) {
+			String[] s = places[i];
+
+			answer[i] = 1;
+
+			loop:
+			for(int r=0; r<5; r++) {
+				for(int c=0; c<5; c++) {
+					if(s[r].charAt(c) == 'P') {
+						if(!bfs(r,c,s)) {
+							answer[i] = 0;
+							break loop;
+						}
+					}
+				}
+			}
+		}
+		return answer;
+	}
+
+	public boolean bfs(int row, int col, String[] map) {
+
+		int[] dr = {-1,1,0,0};
+		int[] dc = {0,0,-1,1};
+
+		Queue<Node> queue = new LinkedList<>();
+		queue.offer(new Node(row,col));
+
+		while(!queue.isEmpty()) {
+			Node node = queue.poll();
+
+			for(int i=0; i<4; i++) {
+				int nR = node.r + dr[i];
+				int nC = node.c + dc[i];
+				int d = Math.abs(nR - row) + Math.abs(nC - col);
+
+				if (nR < 0 || nC < 0 || nR >= 5 || nC >= 5 || (nR == row && nC == col) || d > 2)
+					continue;
+
+
+				if(map[nR].charAt(nC) == 'P' && d <= 2)
+					return false;
+				else if(map[nR].charAt(nC) == 'O' && d < 2)
+					queue.offer(new Node(nR,nC));
+			}
+		}
+		return true;
+	}
 }
+class Node {
+	int r;
+	int c;
 
-
-
-
-
-
-
+	public Node(int r, int c) {
+		this.r = r;
+		this.c = c;
+	}
+}
