@@ -7,6 +7,7 @@ public class Main {
 }
 
 class Solution {
+
   public String solution(String number, int k) {
     int len = number.length() - k;
     StringBuilder sb = new StringBuilder();
